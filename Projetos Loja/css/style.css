@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -9,6 +11,11 @@ body{
     display: flex;
     margin: 0;
     min-height: 100vh;
+}
+
+main{
+    flex: 1;
+    padding: 50px;
 }
 
 header{
@@ -39,3 +46,40 @@ header{
     margin: 0 auto 50px auto;
 }
 
+.modelo-item a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.modelo-item-img{
+    width: 400px;
+    height: 400px;
+    background-color: #eee;
+    border-radius: 10%;
+}
+
+.modelo-item-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modelo-item-add{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: #4a98cf;
+    text-align: center;
+    color: #fdf7f1;
+    font-size: 22PX;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+
+.modelo-item a:hover .modelo-item-add{
+    background-color: #244c88;
+}
