@@ -34,10 +34,6 @@ header{
     align-items: center;
 }
 
-.modeloWindowArea{
-    display: none;
-}
-
 .menu-openner {
     margin-right: 15px;
     font-size:  26px;
@@ -130,7 +126,27 @@ header{
 }
 
 aside{
-    background-color: #d9f1ff;
+    background-color: #e5f2fa;
+    width: 0vw;
+    overflow-x: hidden;
+    font-family: 'Hepta Slab', Helvetica, Arial;
+}
+
+.cart-area{
+    padding: 20px;
+}
+
+.modeloWindowArea{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(225, 2555, 255, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
 }
 
 /*Media Queries*/
@@ -150,6 +166,23 @@ aside{
     }
     main {
         padding-top: 80px;
+    }
+
+    aside{
+        width: auto;
+        position: fixed;
+        left: 100vw;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .cart-area{
+        width: 100vw;
+    }
+
+    .menu-close{
+        display: block;
     }
 
     h1{
