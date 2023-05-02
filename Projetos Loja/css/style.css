@@ -18,16 +18,42 @@ main{
     padding: 50px;
 }
 
+h1{
+    font-family: 'Hepta Slab', Helvetica, Arial;
+    margin-bottom: 40px;
+}
+
 header{
     display: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 60px;
+    position: fixed;
+    background-color: #399ade;
+    align-items: center;
 }
 
 .modeloWindowArea{
     display: none;
 }
 
-.cart-area{
+.menu-openner {
+    margin-right: 15px;
+    font-size:  26px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.meno-openner span{
+    padding-right: 10px;
+}
+
+.menu-close{
+    width: 32px;
+    height: 32px;
     display: none;
+    font-size: 30px;
+
 }
 
 .models{
@@ -102,3 +128,32 @@ header{
     color: #555;
     margin-top: 5px;
 }
+
+aside{
+    background-color: #d9f1ff;
+}
+
+/*Media Queries*/
+@media(max-width: 1300px){
+    .modelo-area{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 900px){
+    .modelo-area{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header{
+        display: flex;
+    }
+    main {
+        padding-top: 80px;
+    }
+
+    h1{
+        text-align: center;
+    }
+}
+
