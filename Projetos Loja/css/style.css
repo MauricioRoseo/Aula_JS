@@ -148,6 +148,7 @@ aside{
     justify-content: center;
     align-items: center;
     overflow-y: auto;
+    transition: all ease 0.5s;
 }
 
 .modeloWindowBody {
