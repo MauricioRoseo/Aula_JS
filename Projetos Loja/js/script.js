@@ -23,11 +23,16 @@ modeloJson.map((item, index)=>{
         c(".modeloInfo .modeloInfo-desc").innerHTML = modeloJson[key].description
         c(".modeloInfo .modeloInfo-pricearea .modeloInfo-actualPrice").innerHTML = `R$ ${modeloJson[key].price.toFixed(2)}`;
 
+        cs(".modeloInfo-size").forEach((size, sizeindex) =>{
+            size.querySelector('span').innerHTML = modeloJson[key].sizes[sizeindex];
+            
+        })
+
         c(".modeloWindowArea").style.opacity = 0;
         c('.modeloWindowArea').style.display = 'flex';
         setTimeout(() =>{
             c('.modeloWindowArea').style.opacity = 1;
-        }, 200)
+        }, 100)
     });
 
     
