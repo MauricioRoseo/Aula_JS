@@ -51,7 +51,7 @@ modeloJson.map((item, index)=>{
 function closeModal(){
     c('.modeloWindowArea').style.opacity = 0;
     setTimeout(()=>{
-        c('.modeloWindowArea').style.display = none;
+        c('.modeloWindowArea').style.display = 'none';
     }, 100);
 }
 
