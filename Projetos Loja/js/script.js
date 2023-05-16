@@ -1,3 +1,4 @@
+let modalqt = 1
 const c = (el) => document.querySelector(el);
 const cs = (el) => document.querySelectorAll(el);
 
@@ -17,17 +18,24 @@ modeloJson.map((item, index)=>{
         e.preventDefault();
 
         let key = e.target.closest(".modelo-item").getAttribute('data-key');
+        modalqt = 1;
 
         c(".modeloBig img").src = modeloJson[key].img
         c(".modeloInfo h1").innerHTML = modeloJson[key].name
         c(".modeloInfo .modeloInfo-desc").innerHTML = modeloJson[key].description
         c(".modeloInfo .modeloInfo-pricearea .modeloInfo-actualPrice").innerHTML = `R$ ${modeloJson[key].price.toFixed(2)}`;
+        c('.modeloInfo-size.selected').classList.remove('selected');
 
         cs(".modeloInfo-size").forEach((size, sizeindex) =>{
+            if (sizeindex == 0){
+                size.classList.add('selected');
+            }
+
             size.querySelector('span').innerHTML = modeloJson[key].sizes[sizeindex];
-            
         })
 
+
+        c('.modeloInfo-qt').innerHTML = modalqt
         c(".modeloWindowArea").style.opacity = 0;
         c('.modeloWindowArea').style.display = 'flex';
         setTimeout(() =>{
@@ -38,4 +46,15 @@ modeloJson.map((item, index)=>{
     
 
     c('.modelo-area').append(modeloItem);
+})
+
+function closeModal(){
+    c('.modeloWindowArea').style.opacity = 0;
+    setTimeout(()=>{
+        c('.modeloWindowArea').style.display = none;
+    }, 100);
+}
+
+cs(".modeloInfo-cancelButton, .modeloInfo-cancelMobileButton").forEach((item)=>{
+    item.addEventListener("click", closeModal)
 })
